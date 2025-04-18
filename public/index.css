@@ -126,6 +126,15 @@ body::-webkit-scrollbar {
     bottom: 0;
     flex:1;
     width: 100%;
+    transition: height 0.5s ease;
+}
+.typing{
+    display: none;
+    opacity: 0;
+    height: 1em;
+    font-size: 0.9em;
+    padding-left: 1em;
+    transition: opacity 0.5s ease;
 }
 .inner-input-group{
     position: fixed;
@@ -273,4 +282,28 @@ body::-webkit-scrollbar {
     font-style: normal;
     font-variation-settings:
       "wdth" 100;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main-text{
+        text-align: center;
+        padding: 0.1em 1em;
+        font-size: 1.4em;
+    }
+    .room{
+        padding-top: 1.5em;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .receiver-inner-text{
+        max-width: 20em;
+    }
+    .sender-inner-text{
+        max-width: 20em;
+    }
+    .message-input{
+        bottom: 0;
+    }
 }
