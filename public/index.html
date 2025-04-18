@@ -23,8 +23,12 @@
               <input type="text" class="form-control" id="username" autocomplete="off">
             </div>
             <div class="mb-3 form-inner-div">
+              <label for="avatarUrl" class="form-label">Avatar URL</label>
+              <input type="text" class="form-control" id="avatarUrl" autocomplete="off">
+            </div>
+            <div class="mb-3 form-inner-div">
               <label for="room" class="form-label">Room</label>
-              <input type="text" class="form-control" id="room">
+              <input type="text" class="form-control" id="room" autocomplete="off">
             </div>
             <button type="submit" class="btn btn-primary form-inner-button">Connect</button>
           </form>
@@ -32,7 +36,10 @@
     <div class="mainContainer">
         <div class="activityScreen">
             <div class="pacifico-regular main-text">Chatter Up</div>
-            <div class="room nunito-font" >Room Tehelka : Ainish, Harsh, Nisha, Vijay, ...</div>
+            <div class="room nunito-font" >
+                <div class="welcomeMessage"></div>
+                <div class="roomInfo"></div>
+            </div>
             <div class="dropdown">
                 <i class="fa-solid fa-circle-chevron-down"  id="dropdown-button"></i>
                 <i class="fa-solid fa-circle-chevron-up" id="rollup-button"></i>
@@ -46,110 +53,10 @@
         <div class="chatScreen">
             <div class="messages">
                 <ul class="message-list">
-                    <li class="join-message-li">Ainish Joined</li>
-                    <li class="text-message-li sender-side">
-                        <div class="sender-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="sender-inner-text">
-                            Hi baby doll Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat repellat blanditiis atque, perferendis ea veniam nobis soluta, ullam accusamus architecto repudiandae itaque! Eum et repellendus laudantium autem porro modi quis!
-                        </div>
-                    </li>
-
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="join-message-li">Ainish Joined</li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
-                    <li class="text-message-li receiver-side">
-                        <div class="receiver-avatar-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/048/216/761/non_2x/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png" alt="">
-                        </div>
-                        <div class="receiver-inner-text">
-                            Hello mere raja Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quaerat tenetur possimus sunt cumque eius similique voluptate. Iure voluptatem voluptas excepturi soluta quae commodi dolores debitis, est et, possimus suscipit.
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="message-input">
                 <div class="typing">
-                    Ainish is typing...
                 </div>
                 <div class="inner-input-group input-group">
                     <input type="text" class="form-control text-box" placeholder="type here" aria-label="Recipient's username" aria-describedby="button-addon2">

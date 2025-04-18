@@ -1,9 +1,10 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import dotenv, { config } from 'dotenv';
 import cors from 'cors';
 import { Server } from 'socket.io';
 import {createServer} from 'http';
+import configSocket from './src/message.js';
+import { connectDB } from './src/config/databaseConfig.js';
 
 
 const app=express();
@@ -17,9 +18,11 @@ const io = new Server(httpServer, {
         origin: "*",
         methods: "*"
     }
-});
+})
 
 
 httpServer.listen(process.env.PORT, () => {
+    connectDB();
     console.log(`Server is running on port ${process.env.PORT}`);
+    configSocket(io);
 })

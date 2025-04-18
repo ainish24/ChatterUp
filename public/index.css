@@ -38,8 +38,14 @@ body::-webkit-scrollbar {
 .room{
     flex: 6;
     text-align: center;
-    padding-top: 1.4rem;
+    padding-top: 0.8em;
     color:#f0f0f0;
+}
+.welcomeMessage{
+    display: none;
+}
+.roomInfo{
+    display: none;
 }
 .dropdown{
     flex:2;
@@ -169,7 +175,7 @@ body::-webkit-scrollbar {
     margin-bottom: 0em;
 }
 .join-message-li{
-    margin: 1em auto;
+    margin: 0.3em auto;
     display: inline-block;
     font-size: 0.8em;
     border: 1.5px solid black;
@@ -182,6 +188,26 @@ body::-webkit-scrollbar {
 .text-message-li{
     display: flex;
     align-items:end;
+}
+.sender-side .message-time{
+    font-size: 0.7em;
+    color: gray;
+    margin-top: 0.2em;
+    float: right
+}
+.receiver-side .message-time{
+    font-size: 0.7em;
+    color: #cccccc;
+    margin-top: 0.2em;
+    float: right
+}
+.sender-name{
+    font-weight: 600;
+    text-align: left;
+}
+.receiver-name{
+    font-weight: 600;
+    text-align: left;
 }
 .sender-inner-text{
     border-radius: 10px 10px 10px 0;
@@ -244,6 +270,15 @@ body::-webkit-scrollbar {
 }
 .form-inner-div{
     width: 20em;
+    margin-bottom: 0.7em !important;
+    /* height: 1em !important; */
+}
+.form-inner-div label{
+    font-size: 1em;
+    margin-bottom: 0.2em !important;
+}
+.form-inner-div input{
+    line-height: 0 !important;
 }
 .form-inner-div input:focus{
     border: 2px solid rgba(116,42,218,255);
@@ -251,7 +286,7 @@ body::-webkit-scrollbar {
 
 }
 .form-inner-button{
-    margin-top: 1em;
+    margin-top: 0.7em;
     background-color:rgba(116,42,218,255);
     color:#ffffff;
     border-radius: 8px;
@@ -260,6 +295,11 @@ body::-webkit-scrollbar {
 .form-inner-button:hover{
     background-color:rgba(93, 34, 174, 1);
     border:1px solid 	rgba(93, 34, 174, 1);
+}
+.form-inner-button:focus, .form-inner-button:active{
+    background-color:rgba(116,42,218,255);
+    border: 1px solid rgba(116,42,218,255);
+    box-shadow: 0 0 5px rgba(116,42,218,255) !important;
 }
 
 
@@ -293,7 +333,7 @@ body::-webkit-scrollbar {
         font-size: 1.4em;
     }
     .room{
-        padding-top: 1.5em;
+        padding-top: 0.9em;
         text-align: center;
         font-size: 0.8em;
     }
