@@ -233,7 +233,15 @@ socket.on('previousMessages',(messageObject)=>{
         renderMessage(messageObject)
     })
 })
-
+const audioElement = new Audio('/files/notificationSound.wav');
+audioElement.preload = 'auto';
+audioElement.volume = 0.5;
 socket.on('receiveMessage',(messageObject)=>{
+    if(messageObject.userName!=userName){
+        audioElement.play().catch((error) => {
+            console.error('Error playing audio:', error);
+        });
+    }
     renderMessage(messageObject)
+
 })
