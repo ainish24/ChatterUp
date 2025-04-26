@@ -83,27 +83,6 @@ hiddenForm.addEventListener('click', function (e) {
 let typingTimeout;
 textBox.addEventListener('input', function () {
     socket.emit('typing', { userName, room });
-    socket.on('typingEvent', (incomingUserName) => {
-        console.log(incomingUserName, userName)
-        if (incomingUserName !== userName) {
-            typingIndicator.innerText='';
-            typingIndicator.innerText = `${incomingUserName} is typing...`;
-        }else{
-            typingIndicator.innerText='';
-            typingIndicator.innerText = `You are typing...`;
-        }
-    })
-    typingIndicator.style.display = 'block';
-    typingIndicator.style.opacity = '1';
-    messageInput.style.height = '4em';
-    clearTimeout(typingTimeout);
-    typingTimeout = setTimeout(function () {
-        typingIndicator.style.opacity = '0';
-        setTimeout(() => {
-            typingIndicator.style.display = 'none';
-        }, 500);
-        messageInput.style.height = '2.5em';
-    }, 1000);
 });
 socket.on('typingEvent', (incomingUserName) => {
     if (incomingUserName !== userName) {
@@ -134,6 +113,9 @@ hiddenForm.addEventListener('submit', function (e) {
     avatarUrl=document.getElementById('avatarUrl').value;
     socket.connect()
     socket.emit('setUsername', {userName, room, avatarUrl});
+    textBox.removeAttribute('disabled')
+    sendButton.classList.remove('disabled-button')
+    textBox.focus()
     welcomeMessage.innerText=`Welcome ${userName}`;
     welcomeMessage.style.display='block';
     usernameForm.style.display='none';
@@ -177,11 +159,15 @@ socket.on('disconnectionMessage',(incomingUserName) => {
 
 //To ensure that the user disconnects even if he reloads the page or closes the tab.
 window.addEventListener('beforeunload', (event) => {
-        socket.disconnect();
+    socket.emit('userDisconnected', { userName, room });
+    textBox.disabled=true
+    sendButton.classList.add('disabled-button')
+        // socket.disconnect();
 });
     
 disconnectButton.addEventListener('click', async function() {
-    // socket.emit('disconnectUser', {userName, room})
+    textBox.disabled=true
+    sendButton.classList.add('disabled-button')
     socket.disconnect()
     roomInfo.innerHTML='';
     welcomeMessage.innerHTML=`${userName} disconnected`;
@@ -229,6 +215,7 @@ const senderName=document.createElement('div');
 }
 
 socket.on('previousMessages',(messageObject)=>{
+    messageList.innerHTML=''
     messageObject.forEach((messageObject)=>{
         renderMessage(messageObject)
     })
