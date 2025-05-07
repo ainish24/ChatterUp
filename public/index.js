@@ -1,5 +1,5 @@
 //autoConnect: false-------prevents auto reconnect when calling the disconnect method
-const socket = io({ autoConnect: false });
+const socket = io('http://localhost:5000',{ autoConnect: false });
 
 let userName, joinTime, leaveTime, room, avatarUrl;
 
@@ -162,12 +162,13 @@ window.addEventListener('beforeunload', (event) => {
     socket.emit('userDisconnected', { userName, room });
     textBox.disabled=true
     sendButton.classList.add('disabled-button')
-        // socket.disconnect();
+        socket.disconnect();
 });
     
 disconnectButton.addEventListener('click', async function() {
     textBox.disabled=true
     sendButton.classList.add('disabled-button')
+    socket.emit('userDisconnected', { userName, room });
     socket.disconnect()
     roomInfo.innerHTML='';
     welcomeMessage.innerHTML=`${userName} disconnected`;
